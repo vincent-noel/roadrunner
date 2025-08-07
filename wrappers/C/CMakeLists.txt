@@ -91,7 +91,7 @@ add_dependencies(${target}-static roadrunner-static)
 
 target_compile_definitions(${target}-static PRIVATE EXPORT_RRC STATIC_RR)
 
-
+# Trying to add installation for the static library
 install(
         TARGETS ${target}-static
         EXPORT ${target}-static
