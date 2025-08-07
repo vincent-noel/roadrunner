@@ -91,3 +91,12 @@ add_dependencies(${target}-static roadrunner-static)
 
 target_compile_definitions(${target}-static PRIVATE EXPORT_RRC STATIC_RR)
 
+
+install(
+        TARGETS ${target}-static
+        EXPORT ${target}-static
+        RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}" COMPONENT ${target}-static
+        LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}" COMPONENT ${target}-static
+        ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}" COMPONENT ${target}-static
+        PUBLIC_HEADER DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/rr" COMPONENT ${target}-static
+)
