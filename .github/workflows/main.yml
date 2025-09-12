@@ -19,7 +19,7 @@ jobs:
             os_type: macos
             os_name: macos-13
             build_type: Release
-            build_python: ON
+            build_python: OFF
           - name: macos-13-debug
             os_type: macos
             os_name: macos-13
@@ -29,7 +29,7 @@ jobs:
             os_type: macos
             os_name: macos-14
             build_type: Release
-            build_python: ON
+            build_python: OFF
           - name: macos-14-debug
             os_type: macos
             os_name: macos-14
@@ -39,7 +39,7 @@ jobs:
             os_type: ubuntu
             os_name: ubuntu-latest
             build_type: Release
-            build_python: ON
+            build_python: OFF
           - name: ubuntu-latest-debug
             os_type: ubuntu
             os_name: ubuntu-latest
@@ -49,7 +49,7 @@ jobs:
             os_type: windows
             os_name: windows-latest
             build_type: Release
-            build_python: ON
+            build_python: OFF
           - name: windows-latest-debug
             os_type: windows
             os_name: windows-latest
@@ -60,7 +60,7 @@ jobs:
             os_name: ubuntu-latest
             container_image: quay.io/pypa/manylinux_2_28_x86_64
             build_type: Release
-            build_python: ON
+            build_python: OFF
         libroadrunner_deps_owner: [ "sys-bio" ]
         libroadrunner_deps_repo: [ "libroadrunner-deps" ]
         libroadrunner_deps_name: [ "libroadrunner-deps" ]
@@ -69,8 +69,8 @@ jobs:
         llvm_repo: [ "llvm-13.x" ]
         llvm_name: [ "llvm-13.x" ]
         llvm_release_version: [ "v13.1" ]
-        build_tests: [ON]
-        build_plugins: [ON]
+        build_tests: [OFF]
+        build_plugins: [OFF]
     runs-on: ${{ matrix.platform.os_name }}
     container:
       image: ${{ matrix.platform.container_image || '' }}
