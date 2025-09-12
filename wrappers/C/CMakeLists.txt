@@ -85,7 +85,7 @@ target_include_directories(${target}-static PUBLIC
 # Note: properties of roadrunner-static are transitive. Link libraries and
 # include_directories for roadrunner-static all come with the
 # roadrunner-static target automatically.
-target_link_libraries(${target}-static PUBLIC roadrunner-static)
+target_link_libraries(${target}-static PUBLIC roadrunner-static "$<TARGET_PROPERTY:roadrunner-static,LINK_LIBRARIES>")
 
 add_dependencies(${target}-static roadrunner-static)
 
